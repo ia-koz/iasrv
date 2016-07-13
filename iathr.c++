@@ -3,7 +3,7 @@
 #include <QTextCodec>
 
 
-iathr::iathr( int			socketDescriptor,
+iathr::iathr( qintptr		socketDescriptor,
 			  QObject 	*	parent )
 	: QThread( parent ),
 	  tcpSocket( 0 ),
@@ -35,7 +35,7 @@ void iathr::readyRead()
 
 	QByteArray block;
 	QDataStream out( &block, QIODevice::WriteOnly );
-	out << tr( "Test text from server.\n" );
+	out << "Test text from server.";
 
 	tcpSocket->write( block );
 

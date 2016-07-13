@@ -10,7 +10,7 @@ class iathr : public QThread
 		Q_OBJECT
 
 	public:
-		iathr( int			socketDescriptor,
+		iathr( qintptr		socketDescriptor,
 			   QObject *	parent );
 
 		void					run() override;
@@ -24,7 +24,7 @@ class iathr : public QThread
 
 	private:
 		QTcpSocket *			tcpSocket;
-		int						socketDescriptor;
+		qintptr					socketDescriptor;
 };
 
 #endif // IATHR_H

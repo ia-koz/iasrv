@@ -35,7 +35,7 @@ int main( int argc, char * argv[] )
 	hostAddress.setAddress( host );
 
 	iasrv server;
-	if ( !server.listen( hostAddress , port.toUInt() ) )
+	if ( !server.listen( hostAddress , port.toUShort() ) )
 	{
 		qDebug() << "Unable to start the server: " << server.errorString() << ".";
 	}
